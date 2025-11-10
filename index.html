@@ -117,32 +117,43 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="contact fade-in">
-    <h2 class="section-title">Get in Touch</h2>
-    <div class="container contact-grid">
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:sarahinteriors.s5@gmail.com">sarahinteriors.s5@gmail.com</a></p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/919965681129" target="_blank">+91 99656 81129</a></p>
-      </div>
-      <form onsubmit="return sendMail(event)">
-        <input type="text" id="name" placeholder="Your Name" required>
-        <input type="email" id="email" placeholder="Your Email" required>
-        <textarea id="message" rows="5" placeholder="Your Message..." required></textarea>
-        <button type="submit" class="btn-primary">Send Message</button>
-      </form>
-    </div>
-  </section>
+  <h2 class="section-title">Get in Touch</h2>
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <p><strong>Email:</strong> 
+        <a href="mailto:sarahinteriors.s5@gmail.com">sarahinteriors.s5@gmail.com</a>
+      </p>
 
+      <p><strong>WhatsApp:</strong> 
+        <a href="https://wa.me/918148125260?text=Hi,%20I%20have%20a%20query..." target="_blank">
+          +91 81481 25260
+        </a>, 
+        <a href="https://wa.me/919965681129?text=Hi,%20I%20have%20a%20query..." target="_blank">
+          +91 99656 81129
+        </a>
+      </p>
+    </div>
+
+    <form onsubmit="return sendMail(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message..." required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
   <!-- FOOTER -->
   <footer class="footer">
     <p>© <span id="year"></span> Sarah Interior and Architects | Designed with ❤️</p>
   </footer>
 
-  <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/919965681129" target="_blank" class="whatsapp-float">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat" />
-  </a>
+ <!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/918148125260?text=Hi, i have new query..,%20I%20have%20a%20query..." 
+   target="_blank" 
+   class="whatsapp-float">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat" />
+</a>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -230,3 +241,4 @@ window.addEventListener("click", e => {
 
 </body>
 </html>
+
