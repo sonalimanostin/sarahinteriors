@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarah Interior and Architects</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<!-- MODAL POPUP -->
+<div id="catalogModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <img id="modalImg" src="" alt="Catalog Image">
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav-bar">
+      <div class="logo">Sarah Interiors<span> & Architects</span></div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#catalog">Design Catalog</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact" class="contact-btn">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content fade-in">
+      <h1>Designing Your Dream Spaces</h1>
+      <p>Elegant interiors and innovative architecture that transform your lifestyle.</p>
+      <a href="#catalog" class="btn-primary">Explore Catalog</a>
+    </div>
+  </section>
+
+  <!-- CATALOG SECTION -->
+  <section id="catalog" class="catalog">
+    <h2 class="section-title fade-in">Our Design Catalog</h2>
+    <div class="catalog-grid">
+
+      <div class="catalog-item fade-in">
+        <img src="./images/Kitchen.jpg" alt="Modular Kitchen">
+        <h3>Modular Kitchen</h3>
+        <p>Modern modular kitchens with sleek finishes and ergonomic design for everyday luxury.</p>
+      </div>
+
+      <div class="catalog-item fade-in">
+        <img src="./images/Wardrobe.jpg" alt="Wardrobe">
+        <h3>Wardrobe</h3>
+        <p>Stylish wardrobes with smart storage solutions to keep your space organized and elegant.</p>
+      </div>
+
+      <div class="catalog-item fade-in">
+        <img src="./images/TV_unit.jpg" alt="TV Unit">
+        <h3>TV Unit</h3>
+        <p>Contemporary entertainment units that blend function with design aesthetics.</p>
+      </div>
+
+      <div class="catalog-item fade-in">
+        <img src="./images/wallpaper.jpg" alt="Wallpaper">
+        <h3>Wallpaper</h3>
+        <p>Designer wallpapers that enhance your interiors with artistic textures and modern patterns.</p>
+      </div>
+
+      <div class="catalog-item fade-in">
+        <img src="./images/false ceiling.jpg" alt="False Ceiling">
+        <h3>False Ceiling</h3>
+        <p>Elegant ceiling designs with ambient lighting that redefine luxury in every room.</p>
+      </div>
+
+      <div class="catalog-item fade-in">
+        <img src="./images/wallpaneling.jpg" alt="Paneling Work">
+        <h3>Paneling Work</h3>
+        <p>Decorative wooden and wall paneling for a classy, architectural statement look.</p>
+      </div>
+
+      <div class="catalog-item fade-in">
+        <img src="./images/wooden ceiling.jpg" alt="Wooden Ceiling">
+        <h3>Wooden Ceiling</h3>
+        <p>Warm and rich wooden ceilings that bring natural elegance into your space.</p>
+      </div>
+
+      <div class="catalog-item fade-in">
+        <img src="images/Glass Partition.jpg" alt="Glass Work & Partition">
+        <h3>Glass Work & Partition</h3>
+        <p>Custom glass designs and partitions for modern, spacious, and elegant interiors.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" class="portfolio">
+    <h2 class="section-title fade-in">Completed Projects</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-in">
+        <img src="./images/modularkitchen1.jpg" alt="Luxury Villa">
+        <div class="caption">Modern Apartment – Chennai</div>
+      </div>
+      <div class="portfolio-item fade-in">
+        <img src="./images/Kitchen.jpg" alt="Modern Living Room">
+        <div class="caption">Modular kitchen – Chennai</div>
+      </div>
+      <div class="portfolio-item fade-in">
+        <img src="./images/office interior.jpg" alt="Office Design">
+        <div class="caption">Office Design – Coimbatore</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact fade-in">
+    <h2 class="section-title">Get in Touch</h2>
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:sarahinteriors.s5@gmail.com">sarahinteriors.s5@gmail.com</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/919965681129" target="_blank">+91 99656 81129</a></p>
+      </div>
+      <form onsubmit="return sendMail(event)">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="5" placeholder="Your Message..." required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Sarah Interior and Architects | Designed with ❤️</p>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://wa.me/919965681129" target="_blank" class="whatsapp-float">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat" />
+  </a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function sendMail(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const msg = document.getElementById("message").value;
+      window.location.href = `mailto:sarahinteriors.s5@gmail.com?subject=Enquiry from ${name}&body=${msg}%0A%0AContact: ${email}`;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+ // === Catalog Modal Functionality ===
+const modal = document.getElementById("catalogModal");
+const modalImg = document.getElementById("modalImg");
+const modalTitle = document.getElementById("modalTitle");
+const modalDesc = document.getElementById("modalDesc");
+const closeBtn = document.querySelector(".close-btn");
+
+// Define catalog data (you can edit descriptions later)
+const catalogDetails = {
+  "Modular Kitchen": {
+    img: "./images/Kitchen.jpg",
+    desc: "Our modular kitchens are crafted with precision and elegance — offering sleek designs, ergonomic layouts, and durable finishes. We use high-quality plywood, granite tops, and soft-close fittings to combine beauty with functionality."
+  },
+  "Wardrobe": {
+    img: "./images/Wardrobe.jpg",
+    desc: "Our wardrobes are designed to maximize storage with modern aesthetics. From sliding to hinged models, we offer customized interiors using laminates, mirrors, and modular fittings that fit your lifestyle."
+  },
+  "TV Unit": {
+    img: "./images/TV_unit.jpg",
+    desc: "Custom-built TV units that balance design and practicality — integrating hidden wiring, floating shelves, and ambient lighting to complement your living room style."
+  },
+  "Wallpaper": {
+    img: "./images/wallpaper.jpg",
+    desc: "Premium wallpapers that add texture, depth, and personality to your space. Choose from 3D patterns, vinyl finishes, or elegant fabric-based designs."
+  },
+  "False Ceiling": {
+    img: "./images/false ceiling.jpg",
+    desc: "We design and install false ceilings that redefine elegance — with gypsum, POP, and wooden textures, integrated with ambient LED lighting."
+  },
+  "Paneling Work": {
+    img: "./images/wallpaneling.jpg",
+    desc: "Paneling that transforms plain walls into masterpieces. Choose from MDF, veneer, or 3D laminate designs for a luxurious visual effect."
+  },
+  "Wooden Ceiling": {
+    img: "./images/wooden ceiling.jpg",
+    desc: "Experience the warmth of nature indoors with our wooden ceilings. Each design brings a touch of sophistication and acoustic comfort."
+  },
+  "Glass Work & Partition": {
+    img: "./images/Glass Partition.jpg",
+    desc: "Modern glass partitions that create open, airy spaces while maintaining privacy. Available in frosted, clear, and designer glass variants."
+  }
+};
+
+// Open modal on click
+document.querySelectorAll(".catalog-item").forEach(item => {
+  item.addEventListener("click", () => {
+    const title = item.querySelector("h3").textContent;
+    const details = catalogDetails[title];
+    modalImg.src = details.img;
+    modalTitle.textContent = title;
+    modalDesc.textContent = details.desc;
+    modal.style.display = "flex";
+  });
+});
+
+// Close modal
+closeBtn.addEventListener("click", () => modal.style.display = "none");
+window.addEventListener("click", e => {
+  if (e.target === modal) modal.style.display = "none";
+});
+
+</script>
+
+</body>
+</html>
