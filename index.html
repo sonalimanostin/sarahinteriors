@@ -49,6 +49,7 @@
         <a href="#home">Home</a>
         <a href="#catalog">Design Catalog</a>
         <a href="#portfolio">Portfolio</a>
+        <a href="#recent-projects">Recent Projects</a>
         <a href="#contact" class="contact-btn">Contact</a>
       </nav>
 
@@ -65,7 +66,51 @@
     </div>
   </section>
 
+<!-- RECENT PROJECTS -->
+<section id="recent-projects" class="recent-projects fade-in">
+  <h2 class="section-title">Our Recent Projects</h2>
 
+  <div class="recent-project-grid">
+
+    <div class="project-card">
+      <img src="./images/project1.jpg" alt="Project">
+
+      <div class="project-content">
+        <h3>Residence Project</h3>
+
+        <button onclick="openProject('https://sripalste52-design.github.io/SARAH-INTERIOR-ARCHITECT-CHENNAI-RESIDENCE-PROJECT/')">
+          View Project
+        </button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="./images/project2.jpg" alt="Project">
+
+      <div class="project-content">
+        <h3>Mr Srinivasan Flat</h3>
+
+        <button onclick="openProject('https://sripalste52-design.github.io/Sarah-Interior-Architects-Mr.Srinivasan-Flat-Chennai/')">
+          View Project
+        </button>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="./images/project3.jpg" alt="Project">
+
+      <div class="project-content">
+        <h3>Sabari Musicals</h3>
+
+        <button onclick="openProject('https://sripalste52-design.github.io/Sarah-Interior-Architects-Sabari-Musicals-Design/')">
+          View Project
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
   <!-- CATALOG SECTION -->
   <section id="catalog" class="catalog">
     <h2 class="section-title fade-in">Our Design Catalog</h2>
@@ -490,7 +535,15 @@
     });
   });
 </script>
-
+<script>
+function openProject(url) {
+  window.open(
+    url,
+    "_blank",
+    "width=1200,height=800,left=100,top=50"
+  );
+}
+</script>
 
 </body>
 
