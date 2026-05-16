@@ -167,25 +167,85 @@
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section id="portfolio" class="portfolio">
-    <h2 class="section-title fade-in">Completed Projects</h2>
-    <div class="portfolio-grid">
-      <div class="portfolio-item fade-in">
-        <img src="./images/modularkitchen1.jpg" alt="Luxury Villa">
-        <div class="caption">Modern Apartment – Chennai</div>
-      </div>
-      <div class="portfolio-item fade-in">
-        <img src="./images/Kitchen.jpg" alt="Modern Living Room">
-        <div class="caption">Modular kitchen – Chennai</div>
-      </div>
-      <div class="portfolio-item fade-in">
-        <img src="./images/office interior.jpg" alt="Office Design">
-        <div class="caption">Office Design – Coimbatore</div>
+ <!-- PORTFOLIO -->
+<section id="portfolio" class="portfolio">
+  <h2 class="section-title fade-in">Completed Projects</h2>
+
+  <div class="portfolio-grid">
+
+    <!-- LIVING ROOM -->
+    <div class="portfolio-item fade-in"
+      onclick="openGallery([
+      './images/Livingroom1.jpeg',
+      './images/Livingroom2.jpeg',
+      './images/Livingroom3.jpeg',
+      './images/livingroom.jpeg'
+    ])">
+
+      <img src="./images/Livingroom1.jpeg" alt="Living Room">
+
+      <div class="caption">
+        Living Room – Chennai
       </div>
     </div>
-  </section>
 
+    <!-- MODULAR KITCHEN -->
+    <div class="portfolio-item fade-in"
+      onclick="openGallery([
+      './images/Kitchen.jpg',
+      './images/Kitchen1.jpeg',
+      './images/Kitchen2.jpeg',
+      './images/Kitchen3.jpeg',
+      './images/Kitchen4.jpeg'
+    ])">
+
+      <img src="./images/Kitchen.jpg" alt="Kitchen">
+
+      <div class="caption">
+        Modular Kitchen – Chennai
+      </div>
+    </div>
+
+    <!-- BEDROOM -->
+    <div class="portfolio-item fade-in"
+      onclick="openGallery([
+      './images/Bedroom.jpeg',
+      './images/Bedroom1.jpeg',
+      './images/Bedroom2.jpeg',
+      './images/Bedroom3.jpeg',
+      './images/Bedroom4.jpeg',
+      './images/Bedroom5.jpeg'
+    ])">
+
+      <img src="./images/Bedroom.jpeg" alt="Bedroom">
+
+      <div class="caption">
+        Bedroom Interior – Chennai
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- IMAGE GALLERY POPUP -->
+<div id="galleryModal" class="gallery-modal">
+
+  <span class="gallery-close" onclick="closeGallery()">
+    &times;
+  </span>
+
+  <img id="galleryImage" class="gallery-content">
+
+  <button class="gallery-prev" onclick="changeImage(-1)">
+    ❮
+  </button>
+
+  <button class="gallery-next" onclick="changeImage(1)">
+    ❯
+  </button>
+
+</div>
+  
   <!-- HOW IT WORKS SECTION -->
   <section id="process" class="process fade-in">
     <h2 class="section-title">How We Work</h2>
@@ -553,7 +613,55 @@ function openProject(url) {
   );
 }
 </script>
+<script>
 
+let galleryImages = [];
+let currentImageIndex = 0;
+
+function openGallery(images) {
+  galleryImages = images;
+  currentImageIndex = 0;
+
+  document.getElementById("galleryModal").style.display = "flex";
+
+  showImage();
+}
+
+function showImage() {
+  document.getElementById("galleryImage").src =
+    galleryImages[currentImageIndex];
+}
+
+function changeImage(direction) {
+
+  currentImageIndex += direction;
+
+  if (currentImageIndex < 0) {
+    currentImageIndex = galleryImages.length - 1;
+  }
+
+  if (currentImageIndex >= galleryImages.length) {
+    currentImageIndex = 0;
+  }
+
+  showImage();
+}
+
+function closeGallery() {
+  document.getElementById("galleryModal").style.display = "none";
+}
+
+window.addEventListener("click", function(e) {
+
+  const modal = document.getElementById("galleryModal");
+
+  if (e.target === modal) {
+    closeGallery();
+  }
+
+});
+
+</script>
 </body>
 
 
